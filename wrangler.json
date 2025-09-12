@@ -11,7 +11,7 @@
   "upload_source_maps": false,
   "compatibility_flags": ["nodejs_compat_v2"],
   "vars": {
-    "SHOPIFY_APP_URL": "https://cloudflare-workers-app.ilias-had.workers.dev",
-    "SCOPES": "writes_products"
+    "SHOPIFY_APP_URL": "https://shopify-app-template-remix-cloudflare-workers.eliasmacielr.workers.dev/",
+    "SCOPES": "read_products"
   }
 }
