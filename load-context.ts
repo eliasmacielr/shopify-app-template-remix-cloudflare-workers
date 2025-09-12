@@ -1,12 +1,12 @@
 import { type PlatformProxy } from "wrangler";
 
 type Env = {
-  SHOPIFY_API_KEY?: string;
-  SHOPIFY_API_SECRET?: string;
-  SHOPIFY_APP_URL?: string;
-  DATABASE_URL?: string;
-  SCOPES?: string;
-}
+  SHOPIFY_API_KEY: string;
+  SHOPIFY_API_SECRET: string;
+  SHOPIFY_APP_URL: string;
+  DATABASE_URL: string;
+  SCOPES: string;
+};
 
 type GetLoadContextArgs = {
   request: Request;

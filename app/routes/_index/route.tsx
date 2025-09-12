@@ -5,15 +5,20 @@ import { Form, useLoaderData } from "@remix-run/react";
 import { shopify } from "../../shopify.server";
 
 import styles from "./styles.module.css";
+import prisma from "../../db.server";
 
 export const loader = async ({ request, context }: LoaderFunctionArgs) => {
   const url = new URL(request.url);
+
+  const sessions = await prisma(
+    context.cloudflare.env.DATABASE_URL,
+  ).session.findMany();
 
   if (url.searchParams.get("shop")) {
     throw redirect(`/app?${url.searchParams.toString()}`);
   }
 
-  return { showForm: Boolean(shopify(context).login) };
+  return { showForm: Boolean(shopify(context).login), sessions };
 };
 
 export default function App() {

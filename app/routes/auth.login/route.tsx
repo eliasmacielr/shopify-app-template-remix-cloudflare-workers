@@ -26,7 +26,7 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 };
 
 export const action = async ({ request, context }: ActionFunctionArgs) => {
-  const errors = loginErrorMessage(await  shopify(context).login(request));
+  const errors = loginErrorMessage(await shopify(context).login(request));
 
   return {
     errors,
