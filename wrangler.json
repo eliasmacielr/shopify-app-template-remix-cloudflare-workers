@@ -1,5 +1,5 @@
 {
-  "name": "cloudflare-workers-app",
+  "name": "shopify-app-template-remix-cloudflare-workers",
   "compatibility_date": "2024-11-11",
   "main": "./server.ts",
   "assets": {
