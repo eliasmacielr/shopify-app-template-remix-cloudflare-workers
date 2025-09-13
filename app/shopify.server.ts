@@ -41,4 +41,5 @@ export const shopify = (context: AppLoadContext) =>
   });
 
 export default shopify;
+export const authenticate = shopify.authenticate;
 export const apiVersion = ApiVersion.October24;
