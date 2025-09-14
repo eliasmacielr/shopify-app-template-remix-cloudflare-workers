@@ -12,6 +12,6 @@
   "compatibility_flags": ["nodejs_compat_v2"],
   "vars": {
     "SHOPIFY_APP_URL": "https://shopify-app-template-remix-cloudflare-workers.eliasmacielr.workers.dev/",
-    "SCOPES": "read_products"
+    "SCOPES": "read_products,write_app_proxy,unauthenticated_read_product_listings,read_metaobjects"
   }
 }
