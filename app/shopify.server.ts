@@ -6,7 +6,7 @@ import {
 } from "@shopify/shopify-app-remix/server";
 
 import { PrismaSessionStorage } from "@shopify/shopify-app-session-storage-prisma";
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from "@prisma/client/edge";
 import type { AppLoadContext } from "@remix-run/node";
 
 export const shopify = (context: AppLoadContext) =>
@@ -16,6 +16,7 @@ export const shopify = (context: AppLoadContext) =>
     apiVersion: ApiVersion.October24,
     scopes: context.cloudflare.env?.SCOPES?.split(",") || ["read_products"],
     appUrl: context.cloudflare.env?.SHOPIFY_APP_URL,
+    authPathPrefix: "/auth",
     sessionStorage: new PrismaSessionStorage(
       new PrismaClient({
         datasourceUrl: context.cloudflare.env.DATABASE_URL,
